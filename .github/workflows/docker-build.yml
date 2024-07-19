@@ -28,7 +28,7 @@ jobs:
       - name: Build and Push Docker image
         uses: docker/build-push-action@v3
         with:
-          context: ./02-demo-app-nodejs-docker
+          context: "{{defaultContext}}:02-demo-app-nodejs-docker"
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/nodejs-ip:latest
